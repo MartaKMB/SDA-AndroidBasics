@@ -43,6 +43,8 @@ public class MasterFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
+                activity.showDetailsData();
+
             }
         });
 

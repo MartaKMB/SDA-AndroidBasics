@@ -21,16 +21,17 @@ public class DetailFragment extends Fragment {
         title = (TextView) view.findViewById(R.id.title);
         textDescription = (TextView) view.findViewById(R.id.textDescription);
 
-
-
-
         return view;
 
     }
 
     public void showBasicData() {
-
+        title.setText("Basic Data");
+        textDescription.setText("Jan Kowalski");
     }
 
-
+    public void showDetailsData() {
+        title.setText("Details");
+        textDescription.setText("Flower Street, Poznan \n age: 41 \n height: 172 cm");
+    }
 }
