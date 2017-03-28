@@ -2,6 +2,7 @@ package sdacademy.pl.masterdetailexample;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 
 public class MainActivity extends Activity {
@@ -12,26 +13,46 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
 //        na 1szym widoku juz cos jest na wstepie
-
-        showBasicData();
+//        showBasicData();
     }
 
     public void showBasicData() {
 
-        FragmentManager fm = getFragmentManager();
-        DetailFragment detailFragment = (DetailFragment) fm.findFragmentById(R.id.detailFragment);
+        DetailFragment detailFragment = getDetailFragment();
 
 //        odniesienie do DetailFragment
 
-        detailFragment.showBasicData();
+//        sprawdzamy - dostosowanie do roznych widokow
 
+        if(detailFragment != null) {
+            detailFragment.showBasicData();
+        } else {
+
+//            wyswietlenie nowego okna
+
+            Intent intent = new Intent(this, DetailActivity.class);
+            startActivity(intent);
+
+        }
+
+    }
+
+    private DetailFragment getDetailFragment() {
+        FragmentManager fm = getFragmentManager();
+        return (DetailFragment) fm.findFragmentById(R.id.detailFragment);
     }
 
     public void showDetailsData() {
 
-        FragmentManager fm = getFragmentManager();
-        DetailFragment detailFragment = (DetailFragment) fm.findFragmentById(R.id.detailFragment);
-        detailFragment.showDetailsData();
+        DetailFragment detailFragment = getDetailFragment();
+
+        if(detailFragment != null) {
+            detailFragment.showDetailsData();
+        } else {
+            Intent intent = new Intent(this, DetailActivity.class);
+            startActivity(intent);
+
+        }
 
     }
 }
