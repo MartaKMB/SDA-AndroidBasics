@@ -24,13 +24,39 @@ public class MainActivity extends Activity {
 
 //        sprawdzamy - dostosowanie do roznych widokow
 
-        if(detailFragment != null) {
+        if(detailFragment != null && detailFragment.isInLayout()) {
+
+//            jezeli da sie wyswietlic cos na tym samym widoku
+
             detailFragment.showBasicData();
         } else {
 
 //            wyswietlenie nowego okna
 
             Intent intent = new Intent(this, DetailActivity.class);
+
+//            uruchamianie nowej aktywnosci, wiec nadajemy jej nazwe - uzywamy do tego intent
+//            przesylanie a odbieranie w DetailActivity
+
+            intent.putExtra(DetailActivity.TO_SHOW, DetailActivity.BASIC_DATA);
+
+            startActivity(intent);
+
+        }
+
+    }
+
+    public void showDetailsData() {
+
+        DetailFragment detailFragment = getDetailFragment();
+
+        if(detailFragment != null && detailFragment.isInLayout()) {
+            detailFragment.showDetailsData();
+        } else {
+            Intent intent = new Intent(this, DetailActivity.class);
+
+            intent.putExtra(DetailActivity.TO_SHOW, DetailActivity.DETAILS);
+
             startActivity(intent);
 
         }
@@ -40,19 +66,5 @@ public class MainActivity extends Activity {
     private DetailFragment getDetailFragment() {
         FragmentManager fm = getFragmentManager();
         return (DetailFragment) fm.findFragmentById(R.id.detailFragment);
-    }
-
-    public void showDetailsData() {
-
-        DetailFragment detailFragment = getDetailFragment();
-
-        if(detailFragment != null) {
-            detailFragment.showDetailsData();
-        } else {
-            Intent intent = new Intent(this, DetailActivity.class);
-            startActivity(intent);
-
-        }
-
     }
 }
