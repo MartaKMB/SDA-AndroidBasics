@@ -23,6 +23,21 @@ public class MasterFragment extends Fragment {
         Button buttonInvestment = (Button) view.findViewById(R.id.buttonInvestment);
 
 
+        buttonCurrency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.showCurrencyCalculator();
+            }
+        });
+
+        buttonInvestment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.showInvestmentButton();
+            }
+        });
+
+
         return view;
 
     }

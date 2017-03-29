@@ -21,4 +21,10 @@ public class MainActivity extends Activity {
 
         transaction.commit();
     }
+
+    public void showCurrencyCalculator() {
+    }
+
+    public void showInvestmentButton() {
+    }
 }
