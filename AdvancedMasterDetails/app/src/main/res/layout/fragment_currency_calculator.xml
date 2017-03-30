@@ -3,13 +3,20 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_currency"
+        android:textAlignment="center" />
+
     <EditText
         android:id="@+id/editTextCurrency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="insert value"
+        android:hint="insert value"
         android:textAlignment="center" />
 
     <Button

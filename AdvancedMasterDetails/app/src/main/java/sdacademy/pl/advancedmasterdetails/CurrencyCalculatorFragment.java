@@ -12,8 +12,9 @@ import android.widget.TextView;
 
 public class CurrencyCalculatorFragment extends Fragment {
 
-    private TextView resultCurrency;
     private EditText editTextCurrency;
+    private TextView resultCurrency;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class CurrencyCalculatorFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_currency_calculator, container, false);
 
-        final EditText editTextCurrency = (EditText) view.findViewById(R.id.editTextCurrency);
+        editTextCurrency = (EditText) view.findViewById(R.id.editTextCurrency);
 
         Button buttonCalcCurrency = (Button) view.findViewById(R.id.buttonCalcCurrency);
 

@@ -3,13 +3,27 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/titleInv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_investment"
+        android:textAlignment="center" />
+
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/amountEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="insert amount"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/yearsEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="insert"
+        android:hint=" insert years"
         android:textAlignment="center" />
 
     <Button

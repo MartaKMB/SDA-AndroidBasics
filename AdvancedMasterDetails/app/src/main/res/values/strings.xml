@@ -3,4 +3,6 @@
     <string name="currency_calculator">result currency</string>
     <string name="investment_calculator">result investment</string>
     <string name="calc_error">Wrong data!</string>
+    <string name="title_currency">CURRENCY CALCULATOR</string>
+    <string name="title_investment">INVESTMENT CALCULATOR</string>
 </resources>
