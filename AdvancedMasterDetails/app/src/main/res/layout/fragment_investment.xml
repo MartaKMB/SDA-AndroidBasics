@@ -4,24 +4,25 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editTextCurrency"
+        android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="insert value"
+        android:text="insert"
         android:textAlignment="center" />
 
     <Button
-        android:id="@+id/buttonCalcCurrency"
+        android:id="@+id/buttonCalcInvestment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate" />
+        android:text="Calculate Investment" />
 
     <TextView
-        android:id="@+id/resultCurrency"
+        android:id="@+id/resultInvestment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/currency_calculator"
+        android:text="@string/investment_calculator"
         android:textAlignment="center" />
+
 </LinearLayout>

@@ -11,6 +11,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        showCurrencyCalculator();
+
+    }
+
+    public void showCurrencyCalculator() {
+
 //        podmienianie ramki na fragment - budujemy to, co ma sie zadziac po kliknieciu przycisku
 //        puste miejsce, na ktore cos wstawiamy dynamicznie
 
@@ -22,9 +28,11 @@ public class MainActivity extends Activity {
         transaction.commit();
     }
 
-    public void showCurrencyCalculator() {
-    }
-
     public void showInvestmentButton() {
+
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentFrame, new InvestmentFragment());
+        transaction.commit();
+
     }
 }

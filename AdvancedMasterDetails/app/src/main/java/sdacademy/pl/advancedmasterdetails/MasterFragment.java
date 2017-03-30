@@ -26,6 +26,9 @@ public class MasterFragment extends Fragment {
         buttonCurrency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//                klasa anonimowa, typ onClick znajduje sie wewnatrz klasy
+
                 activity.showCurrencyCalculator();
             }
         });
