@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AdvancedMasterDetails</string>
+    <string name="currency_calculator">Ergebnis Währung</string>
+    <string name="investment_calculator">Ergebnis Investition</string>
+    <string name="calc_error">Falshe Daten!</string>
+    <string name="title_currency">Währung Rechner</string>
+    <string name="title_investment">Investition Rechner</string>
+</resources>

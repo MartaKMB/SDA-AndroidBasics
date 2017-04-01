@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 
@@ -19,7 +21,7 @@ public class MasterFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_master, container, false);
 
-        Button buttonCurrency = (Button) view.findViewById(R.id.buttonCurrency);
+        final Button buttonCurrency = (Button) view.findViewById(R.id.buttonCurrency);
         Button buttonInvestment = (Button) view.findViewById(R.id.buttonInvestment);
 
 
@@ -30,6 +32,11 @@ public class MasterFragment extends Fragment {
 //                klasa anonimowa, typ onClick znajduje sie wewnatrz klasy
 
                 activity.showCurrencyCalculator();
+
+//                wczytanie z animacja
+//                Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.simple_anim);
+//                buttonCurrency.startAnimation(animation);
+
             }
         });
 

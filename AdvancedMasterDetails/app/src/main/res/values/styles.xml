@@ -1,8 +1,16 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
+    <style name="AppTheme" parent="android:Theme.Holo.Light.NoActionBar">
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="CakcButton" parent="android:Widget.Holo.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:text">@string/calc_button</item>
+        <item name="android:textColor">@color/buttonTextColor</item>
+    </style>
+
+    <string name="calc_button">COUNT</string>
 
 </resources>
