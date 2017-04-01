@@ -19,7 +19,8 @@ public class MainActivity extends Activity {
 
         ListView listView = (ListView) findViewById(R.id.listView);
 
-        PersonProvider provider = new PersonProvider();
+//        PersonProvider provider = new PersonProvider();
+        PersonProvider provider = new FilePersonProvider(getResources());
         List<Person> persons = provider.provide();
 
 //        cos co jest potrzebne, to zaleznosc

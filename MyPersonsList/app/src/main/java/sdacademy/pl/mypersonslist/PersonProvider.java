@@ -11,7 +11,7 @@ public class PersonProvider {
 
 //        trzecia wersja
 
-        result.add(new Person("Adrian", 24));
+        result.add(new Person("publicAdrian", 24));
         result.add(new Person("Kasia", 18));
 
 //        druga wersja
