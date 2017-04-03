@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">SimpleRotationAndLanguage</string>
+    <string name="orientation_vertical">orientacja pionowa</string>
+    <string name="orientation_horizontal">orientacja pozioma</string>
+</resources>

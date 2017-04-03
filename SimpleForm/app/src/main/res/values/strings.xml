@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SimpleForm</string>
+    <string name="empty_field">Login or password is empty</string>
+</resources>

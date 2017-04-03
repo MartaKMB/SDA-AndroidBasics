@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="orientation_vertical">orientation vertical</string>
+    <string name="orientation_horizontal">orientation horizontal</string>
+</resources>
