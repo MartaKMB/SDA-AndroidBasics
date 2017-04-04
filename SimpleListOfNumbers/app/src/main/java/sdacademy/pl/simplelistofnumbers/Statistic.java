@@ -17,6 +17,23 @@ public int maxValue(List<Integer> numbers) {
 }
 
 public int minValue(List<Integer> numbers) {
-    return 0;
+    int min = numbers.get(0);
+
+    for (int i = 0; i < numbers.size(); i++) {
+        if(min > numbers.get(i)) {
+            min = numbers.get(i);
+        }
+    }
+    return min;
+}
+
+public int avgValue(List<Integer> numbers) {
+    int sum = 0;
+
+    for (int i = 0; i < numbers.size(); i++) {
+        sum += numbers.get(i);
+    }
+
+    return sum/numbers.size();
 }
 }

@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="button">#ffffff</color>
+    <color name="background_color">#1c0336</color>
+    <color name="statistic_colors">#7c0541</color>
+    <color name="background_listView_a">#b68fef</color>
+    <color name="background_listView_b">#9f67f1</color>
+    <color name="background_listView_c">#8137ed</color>
 </resources>

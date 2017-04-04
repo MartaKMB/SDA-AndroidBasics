@@ -15,21 +15,21 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    private ListView listView;
+    private ListView numbersListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = (ListView) findViewById(R.id.listView);
+        numbersListView = (ListView) findViewById(R.id.numbersListView);
 
         List<Integer> numbers = new ArrayList<>();
         numbers.add(2);
         numbers.add(13);
         numbers.add(-7);
 
-        listView.setAdapter(new MyListAdapter(numbers));
+        numbersListView.setAdapter(new MyListAdapter(numbers));
 
         EditText insertNumber = (EditText) findViewById(R.id.insertNumber);
 
