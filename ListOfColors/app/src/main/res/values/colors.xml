@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="redForList">#ed0606</color>
+    <color name="red2ForList">#f11818</color>
+    <color name="yellowForList">#edb706</color>
+    <color name="yellow2ForList">#dfed0e</color>
+    <color name="greenForList">#12ed06</color>
+    <color name="green2ForList">#054501</color>
+    <color name="blueForList">#068ded</color>
+    <color name="blue2ForList">#043b63</color>
+    <color name="purpleForList">#5306ed</color>
+    <color name="purple2ForList">#1f0258</color>
+    <color name="pinkForList">#ed06bb</color>
+    <color name="pink2ForList">#ef85d8</color>
+</resources>
