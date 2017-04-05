@@ -12,7 +12,7 @@
         android:id="@+id/numbersListView"
         android:layout_width="match_parent"
         android:layout_height="338dp"
-        android:background="@drawable/background"/>
+        android:background="@drawable/background" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -32,13 +32,13 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/insertNumber"
+                android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.09"
                 android:ems="10"
                 android:hint="@string/insert_number"
-                android:inputType="number" />
+                android:inputType="number|numberSigned" />
         </TableRow>
 
         <TableRow
@@ -67,7 +67,7 @@
                 android:textColor="@color/statistic_colors"/>
 
             <TextView
-                android:id="@+id/maxValue"
+                android:id="@+id/maxTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -85,7 +85,7 @@
                 android:textColor="@color/statistic_colors"/>
 
             <TextView
-                android:id="@+id/minValue"
+                android:id="@+id/minTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </TableRow>
@@ -102,7 +102,7 @@
                 android:textColor="@color/statistic_colors"/>
 
             <TextView
-                android:id="@+id/avgValue"
+                android:id="@+id/meanTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </TableRow>

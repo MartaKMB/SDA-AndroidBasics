@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -15,43 +16,90 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    private ListView numbersListView;
+    EditText editText;
+    ListView numbersListView;
+    Button addButton;
+    TextView maxTextView;
+    TextView minTextView;
+    TextView meanTextView;
+
+    List<Integer> numbers = generateNumbers();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        editText = (EditText) findViewById(R.id.editText);
         numbersListView = (ListView) findViewById(R.id.numbersListView);
+        addButton = (Button) findViewById(R.id.addButton);
+        maxTextView = (TextView) findViewById(R.id.maxTextView);
+        minTextView = (TextView) findViewById(R.id.minTextView);
+        meanTextView = (TextView) findViewById(R.id.meanTextView);
 
+
+//        adaptacja listy liczb do widoku
+
+        final NumbersAdapter numbersAdapter = new NumbersAdapter(numbers);
+        numbersListView.setAdapter(numbersAdapter);
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String newNumberString = editText.getText().toString();
+
+                try {
+                    Integer newNumber = Integer.parseInt(newNumberString);
+
+                    numbers.add(newNumber);
+
+//                    metoda, ktora musi byc wywolana za kazdym razem, jak zmieniamy liste
+
+                    numbersAdapter.notifyDataSetChanged();
+                    editText.setText("");
+
+                    calculateFields();
+                } catch (NumberFormatException e) {
+                }
+            }
+        });
+
+    }
+
+    private void calculateFields() {
+
+        if (numbers.isEmpty()) {
+            minTextView.setText("List is empty");
+            maxTextView.setText("List is empty");
+        } else {
+            int minValue = Statistic.minValue(numbers);
+            minTextView.setText(String.valueOf(minValue));
+
+            int maxValue = Statistic.maxValue(numbers);
+            maxTextView.setText(String.valueOf(maxValue));
+        }
+
+        double meanValue = Statistic.avgValue(numbers);
+        meanTextView.setText(String.valueOf(meanValue));
+    }
+
+    private List<Integer> generateNumbers() {
         List<Integer> numbers = new ArrayList<>();
         numbers.add(2);
         numbers.add(13);
         numbers.add(-7);
-
-        numbersListView.setAdapter(new MyListAdapter(numbers));
-
-        EditText insertNumber = (EditText) findViewById(R.id.insertNumber);
-
-        if(insertNumber != null) {
-
-            String newNumberString = insertNumber.getText().toString();
-            Integer newNumber = Integer.parseInt(newNumberString);
-
-            numbers.add(newNumber);
-
-        } else {
-
-            Toast.makeText(MainActivity.this, "Insert number!", Toast.LENGTH_SHORT).show();
-        }
-
+        numbers.add(6);
+        return numbers;
     }
 
-    public class MyListAdapter extends BaseAdapter {
+    public class NumbersAdapter extends BaseAdapter {
 
         private List<Integer> numbers;
 
-        public MyListAdapter(List<Integer> numbers) {
+//        konstruktor, zeby nadac listy
+
+        public NumbersAdapter(List<Integer> numbers) {
             this.numbers = numbers;
         }
 
@@ -73,12 +121,16 @@ public class MainActivity extends Activity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             TextView textView;
-            if(convertView instanceof TextView) {
+
+//            convertView -pod ta zmienna widok, ktory wyszedl za ekran
+//            kod uniwersalny
+
+            if (convertView instanceof TextView) {
                 textView = (TextView) convertView;
             } else {
                 textView = new TextView(MainActivity.this);
             }
-            textView.setText(getItem(position).toString());
+            textView.setText(String.valueOf(numbers.get(position)));
             return textView;
         }
     }

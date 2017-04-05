@@ -5,35 +5,45 @@ import java.util.List;
 
 public class Statistic {
 
-public int maxValue(List<Integer> numbers) {
-    int max = numbers.get(0);
+    public static int maxValue(List<Integer> numbers) {
 
-    for (int i = 0; i < numbers.size(); i++) {
-        if(max < numbers.get(i)) {
-            max = numbers.get(i);
+        if (numbers.isEmpty()) {
+            throw new IllegalArgumentException("List can't be empty!");
         }
-    }
-    return max;
-}
 
-public int minValue(List<Integer> numbers) {
-    int min = numbers.get(0);
+        int max = numbers.get(0);
 
-    for (int i = 0; i < numbers.size(); i++) {
-        if(min > numbers.get(i)) {
-            min = numbers.get(i);
+        for (int i = 1; i < numbers.size(); i++) {
+            if (max < numbers.get(i)) {
+                max = numbers.get(i);
+            }
         }
-    }
-    return min;
-}
-
-public int avgValue(List<Integer> numbers) {
-    int sum = 0;
-
-    for (int i = 0; i < numbers.size(); i++) {
-        sum += numbers.get(i);
+        return max;
     }
 
-    return sum/numbers.size();
-}
+    public static int minValue(List<Integer> numbers) {
+
+        if (numbers.isEmpty()) {
+            throw new IllegalArgumentException("List can't be empty!");
+        }
+
+        int min = numbers.get(0);
+
+        for (int i = 0; i < numbers.size(); i++) {
+            if (min > numbers.get(i)) {
+                min = numbers.get(i);
+            }
+        }
+        return min;
+    }
+
+    public static double avgValue(List<Integer> numbers) {
+        double sum = 0;
+
+        for (int i = 0; i < numbers.size(); i++) {
+            sum += numbers.get(i);
+        }
+
+        return sum / numbers.size();
+    }
 }
