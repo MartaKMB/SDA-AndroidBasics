@@ -9,10 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends Activity {
 
@@ -23,7 +24,7 @@ public class MainActivity extends Activity {
     TextView minTextView;
     TextView meanTextView;
 
-    List<Integer> numbers = generateNumbers();
+    List<Integer> numbers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,10 @@ public class MainActivity extends Activity {
         maxTextView = (TextView) findViewById(R.id.maxTextView);
         minTextView = (TextView) findViewById(R.id.minTextView);
         meanTextView = (TextView) findViewById(R.id.meanTextView);
+
+        numbers = generateNumbers();
+
+        Collections.sort(numbers);
 
 
 //        adaptacja listy liczb do widoku
@@ -54,12 +59,17 @@ public class MainActivity extends Activity {
 
                     numbers.add(newNumber);
 
+//                    sortujemy
+
+                    Collections.sort(numbers);
+
+                    editText.setText("");
+
 //                    metoda, ktora musi byc wywolana za kazdym razem, jak zmieniamy liste
 
                     numbersAdapter.notifyDataSetChanged();
-                    editText.setText("");
-
                     calculateFields();
+
                 } catch (NumberFormatException e) {
                 }
             }
@@ -86,10 +96,20 @@ public class MainActivity extends Activity {
 
     private List<Integer> generateNumbers() {
         List<Integer> numbers = new ArrayList<>();
-        numbers.add(2);
-        numbers.add(13);
-        numbers.add(-7);
-        numbers.add(6);
+
+//        losowo, po dodaniu Random(100) - "ziarno", losowe, ale na stale
+
+        Random random = new Random(100);
+
+        for (int i = 0; i < 5; i++) {
+            numbers.add(random.nextInt(10));
+        }
+
+//        numbers.add(2);
+//        numbers.add(13);
+//        numbers.add(-7);
+//        numbers.add(6);
+
         return numbers;
     }
 
