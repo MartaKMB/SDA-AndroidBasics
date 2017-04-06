@@ -1,7 +1,9 @@
 package sdacademy.pl.mypersonslist;
 
 import android.app.Activity;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -9,6 +11,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import sdacademy.pl.mypersonslist.databinding.PersonViewBinding;
 
 public class MainActivity extends Activity {
 
@@ -25,7 +29,7 @@ public class MainActivity extends Activity {
 
 //        cos co jest potrzebne, to zaleznosc
 
-        PersonAdapter personAdapter = new PersonAdapter(persons);
+        PersonAdapter personAdapter = new PersonAdapter(persons, getLayoutInflater());
 
         listView.setAdapter(personAdapter);
 
@@ -35,10 +39,16 @@ public class MainActivity extends Activity {
 
         private List<Person> persons;
 
-//        konstruktor, ktory przyjmuje liste
+//        wstrzykiwanie zaleznosci - oczekujemy czegos z zewnatrz
 
-        private PersonAdapter(List<Person> persons) {
+        private LayoutInflater layoutInflater;
+
+//        konstruktor, ktory przyjmuje liste i LayoutInflater
+
+        private PersonAdapter(List<Person> persons, LayoutInflater layoutInflater) {
+
             this.persons = persons;
+            this.layoutInflater = layoutInflater;
         }
 
         @Override
@@ -58,20 +68,32 @@ public class MainActivity extends Activity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            TextView textView;
-            if(convertView instanceof TextView) {
-                textView = (TextView) convertView;
-            } else {
-                textView = new TextView(MainActivity.this);
-            }
+
+//            nie jest to rozwiazanie optymalne, ale poprawki w sobote
+
+//            Binding zamiast TextView
+//            wczytywanie z pliku - inflater, wiec dodajemy pole i do konstruktora
+
+            PersonViewBinding binding = PersonViewBinding.inflate(layoutInflater, parent, false);
+
+//            wersja przed Bindingiem:
+//            TextView textView;
+//            if(convertView instanceof TextView) {
+//                textView = (TextView) convertView;
+//            } else {
+//                textView = new TextView(MainActivity.this);
+//            }
+
             Person person = persons.get(position);
+
+            binding.setPerson(person);
+            return binding.getRoot();
 
 //            wyswietli jak w standardowym toString
 //            textView.setText(person.toString());
 //            jak chcemy zmodyfikowac zmieniamy tutaj, albo tworzymy osobna klase do modyfikacji Stringow
-
-            textView.setText(person.getName() + ", age: " + person.getAge());
-            return textView;
+//            textView.setText(person.getName() + ", age: " + person.getAge());
+//            return textView;
         }
     }
 }

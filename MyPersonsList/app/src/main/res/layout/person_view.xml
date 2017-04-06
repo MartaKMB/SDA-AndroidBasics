@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="person"
+            type="sdacademy.pl.mypersonslist.Person" />
+    </data>
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/field_background"
+        android:layout_margin="4dp"
+        android:text="@{person.name}"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{String.valueOf(person.age)}"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:background="@drawable/field_background"
+        android:layout_margin="4dp"/>
+</LinearLayout>
+</layout>

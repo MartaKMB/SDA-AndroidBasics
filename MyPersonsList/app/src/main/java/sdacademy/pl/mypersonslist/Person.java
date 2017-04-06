@@ -3,6 +3,9 @@ package sdacademy.pl.mypersonslist;
 public class Person {
 
     private String name;
+
+//    zeby nie wyswietlalo id, tylko stringa, to w xml dodajemy String.valueOf
+
     private int age;
 
     public Person() {
