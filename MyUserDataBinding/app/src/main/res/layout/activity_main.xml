@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="sdacademy.pl.myuserdatabinding.User" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="sdacademy.pl.myuserdatabinding.MainActivity">
+
+        <TextView
+            android:id="@+id/firstNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/first_name"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/firstNameTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{user.firstName + "!!!"}'
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/lastNameLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/last_name"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/lastNameTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/changeNameButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_user" />
+
+    </LinearLayout>
+</layout>
