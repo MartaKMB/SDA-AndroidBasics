@@ -6,6 +6,8 @@ import sdacademy.pl.mydaggerexample.model.Economy;
 import sdacademy.pl.mydaggerexample.model.Population;
 import sdacademy.pl.mydaggerexample.model.State;
 
+//  po zastosowaniu Dagger'a ta klasa niejest juz potrzebna
+
 public class DependencyResolver {
 
 //    wstrzykujemy konkretne zaleznosci do kontretnych klas

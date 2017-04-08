@@ -1,7 +1,9 @@
 package sdacademy.pl.mydaggerexample.model;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public class State {
 
     private final Economy economy;
