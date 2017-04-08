@@ -74,7 +74,20 @@ public class MainActivity extends Activity {
 //            Binding zamiast TextView
 //            wczytywanie z pliku - inflater, wiec dodajemy pole i do konstruktora
 
-            PersonViewBinding binding = PersonViewBinding.inflate(layoutInflater, parent, false);
+//            jeden widok jeden binding
+
+            PersonViewBinding binding;
+
+            if (convertView == null) {
+                binding = PersonViewBinding.inflate(layoutInflater, parent, false);
+
+            } else {
+
+//           TAG - zapamietywanie informacji obslugujacych widok
+//           Tag to zmienna klucz, wartosc
+
+                binding = DataBindingUtil.getBinding(convertView);
+            }
 
 //            wersja przed Bindingiem:
 //            TextView textView;

@@ -29,11 +29,13 @@ public class TaxModel extends BaseObservable{
 
     @Bindable
     public double getTaxAmount() {
-        return 0;
+
+        return (amount - freeAmount) * taxPercentage* 0.01;
     }
 
     @Bindable
     public double getNetAmount() {
-        return 0;
+        double taxAmount = getTaxAmount();
+        return amount - taxAmount;
     }
 }

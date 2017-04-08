@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
 
 //        po zmianach w xml <layout> i w build.gradle dataBinding, mamy dostep do klasy ActivityMainBinding
 //        obiekt, ktory jest odpowiedzialny za caly mechanizm
