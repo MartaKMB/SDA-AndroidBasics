@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
         final Button calculateButton = (Button) findViewById(R.id.calculateButton);
         final TextView goldTextView = (TextView) findViewById(R.id.goldTextView);
 
-//        w Maion nie ma kodu ze State - jest w osobnej klasie - wazne, zeby tutaj nie zasmiecac!
+//        w Main nie ma kodu ze State - jest w osobnej klasie - wazne, zeby tutaj nie zasmiecac!
 
         final State state = DependencyResolver.resolve();
 

@@ -1,6 +1,13 @@
 package sdacademy.pl.mydaggerexample.model;
 
+import javax.inject.Inject;
+
 public class Building {
+
+    @Inject
+    public Building() {
+    }
+
     public int countCost() {
         return 100;
     }
